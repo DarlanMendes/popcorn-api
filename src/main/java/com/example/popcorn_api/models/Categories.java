@@ -16,6 +16,6 @@ public class Categories {
     private Long id;
     
    @NotNull(message="It's necessary name for category creation")
-   @Column(nullable = false)
+   @Column(nullable = false, unique = true)
     private String name;
 }
