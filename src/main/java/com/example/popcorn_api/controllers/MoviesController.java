@@ -18,8 +18,8 @@ public class MoviesController {
 
     final private MovieService movieService;
     
-    public ResponseEntity<List<Movie>> getAllMovies() {
-        List<Movie> movies = movieService.getAllMovies();
+    public ResponseEntity<List<Movie>> findAllMovies() {
+        List<Movie> movies = movieService.findAllMovies();
         return ResponseEntity.ok().body(movies);
     }
 }
