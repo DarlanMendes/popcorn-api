@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.popcorn_api.exceptions.CategoryNotFoundException;
+import com.example.popcorn_api.exceptions.CategoryException;
 import com.example.popcorn_api.models.Categories;
 import com.example.popcorn_api.repository.CategoriesRepository;
 
@@ -19,12 +19,21 @@ public class CategoriesService {
         return categoriesRepository.findAll();
     }
     public Categories findCategoryById(Long id){   
-                return this.categoriesRepository.findById(id).orElseThrow(()-> new CategoryNotFoundException("Category not found for id:"+id));       
+                return categoriesRepository.findById(id).orElseThrow(()-> new CategoryException("Category not found for id:"+id));       
     }
-    public void create(Categories  category){
-        categoriesRepository.save(category);
+    public Categories create(Categories  category){
+        return categoriesRepository.save(category);
     }
-    public void deleteCategory(Categories category){
-         categoriesRepository.delete(category);
+    public Categories update(Long id, String name){
+            Categories categories = this.findCategoryById(id);
+            categories.setName(name);
+            return categoriesRepository.save(categories); 
     }
+    public void  deleteCategory(Long id){
+        
+            Categories category = this.findCategoryById(id);
+            categoriesRepository.delete(category);
+        
+    }
+  
 }
