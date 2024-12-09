@@ -31,5 +31,6 @@ public class Series {
 
     @ManyToMany(mappedBy = "genres")
     private List<Genres> genres;
+    //
 
 }

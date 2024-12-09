@@ -22,3 +22,4 @@ CREATE TABLE serie_genres (
     FOREIGN KEY (serie_id) REFERENCES series(id) ON DELETE CASCADE,
     FOREIGN KEY (genre_id) REFERENCES genres(id) ON DELETE CASCADE
 );
+--

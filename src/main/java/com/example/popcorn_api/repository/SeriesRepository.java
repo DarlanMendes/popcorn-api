@@ -9,5 +9,5 @@ import com.example.popcorn_api.models.Series;
 
 @Repository
 public interface SeriesRepository extends JpaRepository<Series, UUID> {
-    
+    //
 }

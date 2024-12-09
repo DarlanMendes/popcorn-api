@@ -24,4 +24,5 @@ public class SeriesService {
 
         return seriesRepository.save(newSerie);
     }
+    //
 }

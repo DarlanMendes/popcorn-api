@@ -23,5 +23,6 @@ public class SeriesRequestDTO {
 
   
     private List<Genres> genres;
+    //
 
 }
