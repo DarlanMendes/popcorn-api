@@ -9,6 +9,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
 @Data
+
 public class SeriesRequestDTO {
      @NotNull(message = "It's necessary to provide a title for the series")
   
@@ -17,9 +18,6 @@ public class SeriesRequestDTO {
     @NotNull(message = "It's necessary to provide a description for the series")
 
     private String description;
-
-  
-    private String poster;
 
   
     private List<Genres> genres;
